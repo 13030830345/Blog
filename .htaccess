@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+	ReWriteRule ^([a-zA-Z0-9_]{1,})$  /$1.php  [NC]
+	ReWriteRule ^([a-zA-Z0-9_]{1,})/([a-zA-Z0-9_]{1,})$  /$1/$2.php  [NC]
+	ReWriteRule ^index-([1-9]+[0-9]*)$  /index.php?page=$1  [NC]
+	ReWriteRule ^category-([1-9]+[0-9]*)$  /category.php?id=$1  [NC]
+	ReWriteRule ^article-([a-zA-Z0-9_]{1,})$  /article.php?id=$1  [NC]
+	ReWriteRule ^search-([a-zA-Z0-9_]{1,})$  /search.php?keyword=$1  [NC]
+	ReWriteRule ^search-([a-zA-Z0-9_]{1,})-([1-9]+[0-9]*)$  /search.php?keyword=$1&page=$2  [NC]
+	ReWriteRule ^([a-zA-Z0-9_]{1,})-([1-9]+[0-9]*)-([1-9]+[0-9]*)$  /$1.php?id=$2&page=$3  [NC]
+	ReWriteRule ^admin/EditArticle-([1-9]+[0-9]*)$  /admin/EditArticle.php?id=$1  [NC]
+	ReWriteRule ^admin/EditFLink-([1-9]+[0-9]*)$  /admin/EditFLink.php?id=$1  [NC]
+	ReWriteRule ^admin/([a-zA-Z0-9_]{1,})-([1-9]+[0-9]*)$  /admin/$1.php?page=$2  [NC]
+	ErrorDocument 404 /404
+</IfModule>

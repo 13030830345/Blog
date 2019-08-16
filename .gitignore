@@ -1,0 +1,8 @@
+# 屏蔽VS目录
+.vs/
+
+# 屏蔽VScode目录
+.vscode/
+
+# 屏蔽工作区设置
+*.code-workspace
